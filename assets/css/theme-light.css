@@ -1,0 +1,214 @@
+/* ============================================================
+   STARLEAF TECHNOLOGIES - LIGHT THEME
+   ============================================================
+   Applied when <html data-theme="light">. Loaded after
+   theme-dark.css, so it only takes effect once that attribute
+   is set (e.g. by the theme toggle in the header).
+
+   Kept in a separate file (as requested) so light and dark can
+   be swapped, edited, or removed independently of each other and
+   of assets/css/style.css.
+   ============================================================ */
+
+[data-theme="light"] {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --card-bg: rgba(15, 23, 42, 0.04);
+    --card-hover: rgba(15, 23, 42, 0.07);
+
+    --primary: #2563EB;
+    --secondary: #0891B2;
+    --accent: #0EA5E9;
+    --success: #059669;
+    --warning: #D97706;
+    --purple: #7C3AED;
+
+    --text-white: #0F172A;      /* primary text color - kept var name for drop-in compatibility */
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+
+    --border-glass: rgba(15, 23, 42, 0.10);
+    --border-glass-hover: rgba(15, 23, 42, 0.18);
+
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 32px rgba(15, 23, 42, 0.10);
+    --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.14);
+    --shadow-glow: 0 4px 15px rgba(37, 99, 235, 0.20);
+
+    --navbar-bg: rgba(255, 255, 255, 0.85);
+    --footer-bg: #EEF2F7;
+    --input-bg: #FFFFFF;
+    --scrollbar-track: #E2E8F0;
+    --scrollbar-thumb: #2563EB;
+
+    color-scheme: light;
+}
+
+/* --- Component-level fixes that pure variables can't cover --- */
+
+/* Client logos: dark marks instead of inverted-to-white */
+[data-theme="light"] .client-logo {
+    filter: brightness(0) opacity(0.45);
+}
+[data-theme="light"] .client-logo:hover {
+    filter: brightness(0) opacity(0.85);
+}
+
+/* Navbar / footer explicit backgrounds (some rules set these directly
+   rather than through a variable) */
+[data-theme="light"] .navbar {
+    background: var(--navbar-bg) !important;
+    border-bottom: 1px solid var(--border-glass);
+}
+[data-theme="light"] .footer {
+    background: var(--footer-bg) !important;
+    border-top: 1px solid var(--border-glass);
+}
+
+/* Hero radial-gradient glows are tuned for a dark backdrop; soften them
+   so they read as accents rather than muddy patches on white */
+[data-theme="light"] .hero-section,
+[data-theme="light"] .service-hero-lottie {
+    background: radial-gradient(ellipse at 20% 50%, rgba(37, 99, 235, 0.06), transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.05), transparent 50%),
+                var(--bg-primary) !important;
+}
+
+/* Glass-morphism cards need a visible border on a light backdrop */
+[data-theme="light"] .glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-glass);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Form inputs: force a white field so text stays readable */
+[data-theme="light"] .form-control,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+    background: var(--input-bg) !important;
+    color: var(--text-white) !important;
+    border-color: var(--border-glass) !important;
+}
+[data-theme="light"] .form-control::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Mobile dropdown menu background (hardcoded rgba assumes dark) */
+[data-theme="light"] .navbar .dropdown-menu {
+    background: rgba(255, 255, 255, 0.97) !important;
+    border-color: var(--border-glass) !important;
+}
+
+/* Back-to-top button icon stays legible on the gradient */
+[data-theme="light"] #back-to-top {
+    color: #FFFFFF;
+}
+
+/* Scrollbar */
+[data-theme="light"] ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); }
+
+/* ============================================================
+   NAVIGATION MENU TEXT COLORS
+   ------------------------------------------------------------
+   style.css hardcodes the default (inactive) nav-link, dropdown
+   toggle, and dropdown-item colors as rgba(255,255,255,...) -
+   literal white - completely independent of our theme variables.
+   That's invisible/very faint on a light navbar background.
+   ============================================================ */
+[data-theme="light"] .navbar .nav-link {
+    color: rgba(15, 23, 42, 0.65) !important;
+}
+[data-theme="light"] .navbar .nav-link:hover,
+[data-theme="light"] .navbar .nav-link.active {
+    color: var(--primary) !important;
+}
+[data-theme="light"] .navbar .dropdown-toggle {
+    color: rgba(15, 23, 42, 0.65) !important;
+}
+[data-theme="light"] .navbar .dropdown-toggle:hover,
+[data-theme="light"] .navbar .dropdown-toggle.active {
+    color: var(--primary) !important;
+}
+[data-theme="light"] .navbar .dropdown-item {
+    color: rgba(15, 23, 42, 0.75) !important;
+}
+[data-theme="light"] .navbar .dropdown-item:hover {
+    background: rgba(15, 23, 42, 0.05) !important;
+    color: var(--primary) !important;
+}
+
+/* Hamburger icon: dark stroke instead of white */
+[data-theme="light"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(15,23,42,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+[data-theme="light"] .navbar-toggler {
+    border-color: rgba(15, 23, 42, 0.2) !important;
+}
+[data-theme="light"] .navbar-toggler:hover {
+    border-color: rgba(15, 23, 42, 0.4) !important;
+}
+
+/* ============================================================
+   FOOTER MENU TEXT COLORS
+   ------------------------------------------------------------
+   .footer ul li a already reads from --text-secondary (fine),
+   but the footer legal-links row and social icons use Bootstrap's
+   .text-secondary utility and hardcoded borders that need the
+   same treatment as the rest of the site.
+   ============================================================ */
+[data-theme="light"] .footer {
+    color: var(--text-secondary);
+}
+[data-theme="light"] .footer a {
+    color: var(--text-secondary);
+}
+[data-theme="light"] .footer a:hover {
+    color: var(--primary) !important;
+}
+
+
+/* ============================================================
+   BOOTSTRAP UTILITY CLASS OVERRIDES
+   ------------------------------------------------------------
+   These Bootstrap utilities (.text-white, .text-secondary,
+   .bg-dark, .border-white) are hardcoded in Bootstrap's own CSS
+   and don't read from our theme variables at all, since they're
+   independent of our design system. They're used ~700 times
+   across the site for body/heading text, so without overriding
+   them here, all that text would stay white (invisible on a
+   light background) when the light theme is active.
+   ============================================================ */
+
+/* Body copy and headings using Bootstrap's .text-white utility */
+[data-theme="light"] .text-white {
+    color: var(--text-white) !important;
+}
+
+/* Secondary/muted copy using Bootstrap's .text-secondary utility
+   (a different thing from our --text-secondary variable, which
+   only feeds our own custom classes - both need to point at the
+   same value here) */
+[data-theme="light"] .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+/* Subtle section tint backgrounds (bg-dark bg-opacity-25) and dark
+   form fields (bg-dark border-secondary text-white) */
+[data-theme="light"] .bg-dark {
+    background-color: var(--bg-secondary) !important;
+}
+[data-theme="light"] .border-secondary {
+    border-color: var(--border-glass) !important;
+}
+
+/* Divider using border-white border-opacity-10 (clients section) */
+[data-theme="light"] .border-white {
+    border-color: var(--text-white) !important;
+}
+
+/* Placeholder text inside bg-dark form fields */
+[data-theme="light"] .bg-dark::placeholder {
+    color: var(--text-muted) !important;
+}
+

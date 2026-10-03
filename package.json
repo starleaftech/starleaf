@@ -1,0 +1,9 @@
+{
+  "name": "starleaf-technologies-vercel",
+  "private": true,
+  "version": "1.0.0",
+  "description": "STARLEAF Technologies static Vercel site with a serverless contact API",
+  "dependencies": {
+    "nodemailer": "^7.0.6"
+  }
+}

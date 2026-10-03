@@ -1,0 +1,56 @@
+/* ============================================================
+   STARLEAF TECHNOLOGIES - DARK THEME
+   ============================================================
+   This is the site's original/default look. It's separated out
+   here so dark and light can be swapped independently of the
+   main stylesheet (assets/css/style.css), which only handles
+   layout/structure and reads colors from these CSS variables.
+
+   Applied when <html data-theme="dark"> (or no data-theme attribute
+   at all, since :root matches by default).
+   ============================================================ */
+
+:root,
+[data-theme="dark"] {
+    --bg-primary: #07111F;
+    --bg-secondary: #0F172A;
+    --card-bg: rgba(255, 255, 255, 0.06);
+    --card-hover: rgba(255, 255, 255, 0.09);
+
+    --primary: #2563EB;
+    --secondary: #06B6D4;
+    --accent: #00D4FF;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --purple: #8B5CF6;
+
+    --text-white: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --border-glass-hover: rgba(255, 255, 255, 0.15);
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 4px 15px rgba(37, 99, 235, 0.3);
+
+    --navbar-bg: rgba(7, 17, 31, 0.85);
+    --footer-bg: #050C16;
+    --input-bg: var(--bg-primary);
+    --scrollbar-track: #0F172A;
+    --scrollbar-thumb: #2563EB;
+
+    color-scheme: dark;
+}
+
+/* Client logos: shown as white marks on the dark background */
+[data-theme="dark"] .client-logo,
+:root .client-logo {
+    filter: brightness(0) invert(1) opacity(0.4);
+}
+[data-theme="dark"] .client-logo:hover,
+:root .client-logo:hover {
+    filter: brightness(0) invert(1) opacity(1);
+}

@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <title>About Us - STARLEAF Technologies</title>
+    <meta name="description" content="Learn about STARLEAF Technologies - our mission, vision, values, and global presence in enterprise AI and cloud solutions.">
+    <link rel="canonical" href="https://starleaf.ae/about">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Us - STARLEAF Technologies">
+    <meta property="og:description" content="Learn about STARLEAF Technologies - our mission, vision, values, and global presence in enterprise AI and cloud solutions.">
+    <meta property="og:url" content="https://starleaf.ae/about">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STARLEAF Technologies">
+    <meta property="og:image" content="https://starleaf.ae/assets/images/og-image.webp">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@STARLEAF_AE">
+    <meta name="twitter:title" content="About Us - STARLEAF Technologies">
+    <meta name="twitter:description" content="Learn about STARLEAF Technologies - our mission, vision, values, and global presence in enterprise AI and cloud solutions.">
+    <meta name="twitter:image" content="https://starleaf.ae/assets/images/og-image.webp">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css?v=1790852077">
+    <!-- Light theme only for now. assets/css/theme-dark.css is kept in the
+         project and can be re-enabled later (see theme-light.css link below
+         and the data-theme="light" attribute on <html> at the top of this file). -->
+    <link rel="stylesheet" href="./assets/css/theme-light.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    
+    <meta name="theme-color" content="#07111F">
+    <meta name="author" content="STARLEAF TECHNOLOGIES FZE LLC">
+</head>
+<body class="page-about">
+    
+    <!-- Preloader -->
+    <div id="preloader" aria-hidden="true">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="./index" aria-label="STARLEAF Technologies Home">
+                <img src="./assets/images/starleaf-logo.png" alt="STARLEAF Technologies" height="60">
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarMain" 
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="offcanvas offcanvas-end offcanvas-lg" tabindex="-1" id="navbarMain" aria-labelledby="navbarMainLabel">
+                <div class="offcanvas-header d-lg-none">
+                    <a class="navbar-brand mb-0" href="./index" id="navbarMainLabel">
+                        <img src="./assets/images/starleaf-logo.png" alt="STARLEAF Technologies" height="40">
+                    </a>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarMain" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link " href="./index">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about">
+                            About
+                        </a>
+                    </li>
+                    <!-- Services Dropdown - FIXED: Removed data-bs-toggle and data-bs-target -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle services-toggle " 
+                           href="#" id="servicesDropdown" role="button" aria-expanded="false" onclick="return false;">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="servicesDropdown">
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/ai-development">
+                                    <i class="fas fa-brain me-2"></i>AI Development                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/software-development">
+                                    <i class="fas fa-code me-2"></i>Software Development                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/mobile-development">
+                                    <i class="fas fa-mobile-alt me-2"></i>Mobile Development                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/cloud-solutions">
+                                    <i class="fas fa-cloud me-2"></i>Cloud Solutions                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/cybersecurity">
+                                    <i class="fas fa-shield-alt me-2"></i>Cybersecurity                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/devops">
+                                    <i class="fas fa-infinity me-2"></i>DevOps                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/data-analytics">
+                                    <i class="fas fa-chart-line me-2"></i>Data Analytics                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/ui-ux-design">
+                                    <i class="fas fa-paint-brush me-2"></i>UI/UX Design                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/digital-marketing">
+                                    <i class="fas fa-bullhorn me-2"></i>Digital Marketing                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/erp-crm">
+                                    <i class="fas fa-cubes me-2"></i>ERP & CRM                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/qa-testing">
+                                    <i class="fas fa-check-circle me-2"></i>QA & Testing                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/managed-services">
+                                    <i class="fas fa-server me-2"></i>Managed Services                                </a>
+                            </li>
+                                                        <li>
+                                <a class="dropdown-item " 
+                                   href="./services/it-consulting">
+                                    <i class="fas fa-chalkboard-user me-2"></i>IT Consulting                                </a>
+                            </li>
+                                                        <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item fw-bold" href="./allservices">
+                                    <i class="fas fa-arrow-right me-2"></i>View All Services
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./technologies">
+                            Technologies
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./industries">
+                            Industries
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./portfolio">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./blog">
+                            Insights
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./careers">
+                            Careers
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-gradient rounded-pill px-4 py-2" href="./contact">
+                            <i class="fas fa-comment-dots me-2"></i>Let's Talk
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- Hero Section - Text Left, Lottie Right -->
+<section class="hero-section d-flex align-items-center hero-section-min service-hero-lottie">
+    <div class="container position-relative z-2">
+        <div class="row align-items-center g-5">
+            <!-- Left Side - Text Content -->
+            <div class="col-12 col-lg-6" data-aos="fade-right">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-pill mb-4 d-inline-block fw-semibold text-uppercase tracking-wider">
+                    <i class="fas fa-info-circle me-2"></i> About Us
+                </span>
+                <h1 class="display-1 fw-bold text-white lh-1 mb-4">
+                    Engineering the <br><span class="text-gradient">Future</span>
+                </h1>
+                <p class="lead text-secondary fs-5 mb-4 pe-xl-5">
+                    We are a global technology firm delivering AI, cloud, and digital transformation solutions to Fortune 500 enterprises.
+                </p>
+                <div class="d-flex flex-wrap gap-4 mt-4">
+                    <a href="contact" class="btn btn-gradient btn-lg px-5 py-3 rounded-pill fw-semibold shadow-glow">
+                        Get Started <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    <a href="#story" class="btn btn-outline-glass btn-lg px-5 py-3 rounded-pill fw-semibold">
+                        Our Story <i class="fas fa-chevron-right ms-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="d-flex flex-wrap gap-4 mt-5">
+                    <div>
+                        <span class="text-white fw-bold fs-4">2024+</span>
+                        <span class="text-secondary d-block">Years Experience</span>
+                    </div>
+                    <div>
+                        <span class="text-white fw-bold fs-4">500+</span>
+                        <span class="text-secondary d-block">Global Clients</span>
+                    </div>
+                    <div>
+                        <span class="text-white fw-bold fs-4">40+</span>
+                        <span class="text-secondary d-block">Countries Served</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Lottie Animation -->
+            <div class="col-12 col-lg-6" data-aos="fade-left">
+                <div class="hero-lottie-wrapper">
+                    <div id="lottieAnimation" data-lottie-page="about"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Particles -->
+    <div class="hero-particle hero-particle-1"></div>
+    <div class="hero-particle hero-particle-2"></div>
+    <div class="hero-particle hero-particle-3"></div>
+</section>
+
+<!-- Company Story -->
+<section id="story" class="section-padding">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-12 col-lg-6" data-aos="fade-right">
+                <h2 class="text-white display-4 fw-bold mb-4">Our <span class="text-gradient">Story</span></h2>
+                <p class="text-secondary fs-5">Founded in 2024, STARLEAF Technologies has grown from a small AI research lab to a global enterprise technology leader. We've helped over 500 organizations across 40+ countries harness the power of AI, cloud computing, and data analytics.</p>
+                <p class="text-secondary fs-5 mt-3">Our name reflects our philosophy: like a star that illuminates and a leaf that symbolizes growth, we light the path to technological evolution and sustainable innovation.</p>
+                <div class="row mt-4 g-3">
+                    <div class="col-6 d-flex"><div class="glass-card p-4 rounded-4 w-100 d-flex flex-column justify-content-center"><h3 class="text-white">2024+</h3><span class="text-secondary">Years of Innovation</span></div></div>
+                    <div class="col-6 d-flex"><div class="glass-card p-4 rounded-4 w-100 d-flex flex-column justify-content-center"><h3 class="text-white">500+</h3><span class="text-secondary">Global Clients</span></div></div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6" data-aos="fade-left">
+                <img src="assets/images/about/team.webp" alt="STARLEAF Team" class="img-fluid rounded-4 shadow-lg" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Vision Values -->
+<section class="section-padding bg-dark bg-opacity-25">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-12 col-md-4" data-aos="fade-up">
+                <div class="glass-card p-5 rounded-4 text-center h-100">
+                    <div class="bg-primary bg-opacity-10 rounded-circle p-4 d-inline-flex mb-4">
+                        <i class="fas fa-rocket text-primary fa-3x"></i>
+                    </div>
+                    <h3 class="text-white">Mission</h3>
+                    <p class="text-secondary">To engineer intelligence that accelerates possibility for enterprises worldwide through transformative technology solutions.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card p-5 rounded-4 text-center h-100">
+                    <div class="bg-primary bg-opacity-10 rounded-circle p-4 d-inline-flex mb-4">
+                        <i class="fas fa-eye text-primary fa-3x"></i>
+                    </div>
+                    <h3 class="text-white">Vision</h3>
+                    <p class="text-secondary">To be the world's most trusted partner for enterprise AI and cloud transformation, shaping the future of intelligent business.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-card p-5 rounded-4 text-center h-100">
+                    <div class="bg-primary bg-opacity-10 rounded-circle p-4 d-inline-flex mb-4">
+                        <i class="fas fa-heart text-primary fa-3x"></i>
+                    </div>
+                    <h3 class="text-white">Values</h3>
+                    <p class="text-secondary">Innovation, Integrity, Excellence, Collaboration, and Customer-Centricity drive everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership -->
+<section class="section-padding">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary bg-opacity-10 text-primary px-4 py-2 rounded-pill mb-4">Leadership</span>
+            <h2 class="text-white display-4 fw-bold">Meet Our <span class="text-gradient">Leaders</span></h2>
+        </div>
+        <div class="row g-4">
+                        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="50">
+                <div class="glass-card p-4 rounded-4 text-center">
+                    <img src="assets/images/leadership/ceo.webp" alt="Dr. Sarah Ahmed" class="rounded-circle mb-3 leader-image" loading="lazy">
+                    <h5 class="text-white">Dr. Sarah Ahmed</h5>
+                    <span class="text-secondary small">CEO & Founder</span>
+                    <p class="text-secondary mt-2 small">Ex-Google AI Research, PhD Stanford</p>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card p-4 rounded-4 text-center">
+                    <img src="assets/images/leadership/cto.webp" alt="Michael Chen" class="rounded-circle mb-3 leader-image" loading="lazy">
+                    <h5 class="text-white">Michael Chen</h5>
+                    <span class="text-secondary small">CTO</span>
+                    <p class="text-secondary mt-2 small">Ex-Microsoft Azure, 20+ years cloud</p>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="glass-card p-4 rounded-4 text-center">
+                    <img src="assets/images/leadership/cdo.webp" alt="Elena Rodriguez" class="rounded-circle mb-3 leader-image" loading="lazy">
+                    <h5 class="text-white">Elena Rodriguez</h5>
+                    <span class="text-secondary small">Chief Data Officer</span>
+                    <p class="text-secondary mt-2 small">Ex-AWS, Data Architecture expert</p>
+                </div>
+            </div>
+                        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="glass-card p-4 rounded-4 text-center">
+                    <img src="assets/images/leadership/ciso.webp" alt="James Okafor" class="rounded-circle mb-3 leader-image" loading="lazy">
+                    <h5 class="text-white">James Okafor</h5>
+                    <span class="text-secondary small">CISO</span>
+                    <p class="text-secondary mt-2 small">Ex-IBM Security, CISSP certified</p>
+                </div>
+            </div>
+                    </div>
+    </div>
+</section>
+
+<!-- Global Presence & Certifications -->
+<section class="section-padding bg-dark bg-opacity-25">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-12 col-lg-6" data-aos="fade-right">
+                <h2 class="text-white display-4 fw-bold mb-4">Global <span class="text-gradient">Presence</span></h2>
+                <div class="row g-3">
+                                        <div class="col-6 d-flex">
+                        <div class="glass-card p-3 rounded-4 w-100 h-100 d-flex flex-column">
+                            <i class="fas fa-map-marker-alt text-primary mb-2"></i>
+                            <h6 class="text-white">Dubai, UAE</h6>
+                            <span class="text-secondary small">HQ</span>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+            <div class="col-12 col-lg-6" data-aos="fade-left">
+                <h2 class="text-white display-4 fw-bold mb-4">Certifications & <span class="text-gradient">Awards</span></h2>
+                <div class="row g-3">
+                                        <div class="col-6 d-flex">
+                        <div class="glass-card p-3 rounded-4 text-center w-100 h-100 d-flex flex-column justify-content-center">
+                            <i class="fas fa-certificate text-primary fa-2x mb-2"></i>
+                            <h6 class="text-white">ISO 27001</h6>
+                        </div>
+                    </div>
+                                        <div class="col-6 d-flex">
+                        <div class="glass-card p-3 rounded-4 text-center w-100 h-100 d-flex flex-column justify-content-center">
+                            <i class="fas fa-certificate text-primary fa-2x mb-2"></i>
+                            <h6 class="text-white">SOC 2 Type II</h6>
+                        </div>
+                    </div>
+                                        <div class="col-6 d-flex">
+                        <div class="glass-card p-3 rounded-4 text-center w-100 h-100 d-flex flex-column justify-content-center">
+                            <i class="fas fa-trophy text-primary fa-2x mb-2"></i>
+                            <h6 class="text-white">AI Innovator 2024</h6>
+                        </div>
+                    </div>
+                                        <div class="col-6 d-flex">
+                        <div class="glass-card p-3 rounded-4 text-center w-100 h-100 d-flex flex-column justify-content-center">
+                            <i class="fas fa-trophy text-primary fa-2x mb-2"></i>
+                            <h6 class="text-white">Cloud Excellence</h6>
+                        </div>
+                    </div>
+                                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="section-padding">
+    <div class="container">
+        <div class="glass-card p-5 rounded-4 text-center" data-aos="fade-up">
+            <h2 class="text-white display-4 fw-bold">Ready to <span class="text-gradient">Transform</span> Your Business?</h2>
+            <p class="text-secondary fs-5 mx-auto" style="max-width:600px;">Let's discuss how STARLEAF can help you accelerate your digital transformation journey.</p>
+            <a href="contact" class="btn btn-gradient btn-lg px-5 py-3 rounded-pill fw-semibold mt-3">Contact Us <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a class="navbar-brand" href="./index">
+                        <img src="./assets/images/starleaf-logo.png" alt="STARLEAF TECHNOLOGIES FZE LLC" height="35">
+                    </a>
+                    <p class="text-secondary mt-3">Engineering Intelligence. Accelerating Possibility.</p>
+                    <div class="d-flex gap-3 mt-3">
+                                                <a href="https://linkedin.com/company/starleaf-technologies" aria-label="LinkedIn" class="text-secondary hover-primary transition" target="_blank">
+                            <i class="fab fa-linkedin-in fa-lg"></i>
+                        </a>
+                                                <a href="https://twitter.com/STARLEAF_AE" aria-label="Twitter" class="text-secondary hover-primary transition" target="_blank">
+                            <i class="fab fa-x-twitter fa-lg"></i>
+                        </a>
+                                                <a href="https://youtube.com/@STARLEAF_TECH" aria-label="YouTube" class="text-secondary hover-primary transition" target="_blank">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                                                <a href="https://github.com/starleaf-technologies" aria-label="GitHub" class="text-secondary hover-primary transition" target="_blank">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                                                <a href="https://instagram.com/starleaf_tech" aria-label="Instagram" class="text-secondary hover-primary transition" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                                            </div>
+                </div>
+                
+                <div class="col-6 col-lg-2 d-none d-xl-block">
+                    <h6 class="text-white text-uppercase small fw-bold tracking-wider mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="./about" class="text-secondary text-decoration-none hover-white transition">About Us</a></li>
+                        <li class="mb-2"><a href="./careers" class="text-secondary text-decoration-none hover-white transition">Careers</a></li>
+                        <li class="mb-2"><a href="./blog" class="text-secondary text-decoration-none hover-white transition">Insights</a></li>
+                        <li class="mb-2"><a href="./contact" class="text-secondary text-decoration-none hover-white transition">Contact</a></li>
+                        <li class="mb-2"><a href="./portfolio" class="text-secondary text-decoration-none hover-white transition">Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-lg-2 d-none d-xl-block">
+                    <h6 class="text-white text-uppercase small fw-bold tracking-wider mb-3">Services</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="./services/ai-development" class="text-secondary text-decoration-none hover-white transition">AI Development</a></li>
+                        <li class="mb-2"><a href="./services/cloud-solutions" class="text-secondary text-decoration-none hover-white transition">Cloud Solutions</a></li>
+                        <li class="mb-2"><a href="./services/cybersecurity" class="text-secondary text-decoration-none hover-white transition">Cybersecurity</a></li>
+                        <li class="mb-2"><a href="./services/data-analytics" class="text-secondary text-decoration-none hover-white transition">Data Analytics</a></li>
+                        <li class="mb-2"><a href="./services/software-development" class="text-secondary text-decoration-none hover-white transition">Software Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-12 col-lg-4">
+                    <h6 class="text-white text-uppercase small fw-bold tracking-wider mb-3">Stay Connected</h6>
+                    <p class="text-secondary small">Subscribe to our newsletter for the latest insights.</p>
+                    <form class="d-flex gap-2 flex-wrap" onsubmit="event.preventDefault(); alert('Thank you for subscribing!'); this.reset();">
+                        <input type="email" class="form-control bg-dark border-secondary text-white flex-grow-1" placeholder="Enter your email" required>
+                        <button class="btn btn-gradient rounded-pill px-4 flex-shrink-0" type="submit">Subscribe</button>
+                    </form>
+                    
+                    <div class="mt-4">
+                        <p class="text-secondary small mb-1">
+                            <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                            Dubai Silicon Oasis, Dubai, UAE                        </p>
+                        <p class="text-secondary small mb-1">
+                            <i class="fas fa-envelope text-primary me-2"></i>
+                            <a href="mailto:info@starleaftechnologies.com" class="text-secondary text-decoration-none hover-white transition">info@starleaftechnologies.com</a>
+                        </p>
+                        <p class="text-secondary small">
+                            <i class="fas fa-phone text-primary me-2"></i>
+                            <a href="tel:971563254247" class="text-secondary text-decoration-none hover-white transition">+971-5-6325-4247</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="border-secondary my-4">
+            
+            <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+                <span class="text-secondary small">
+                    &copy; 2026 <span class="text-white">STARLEAF TECHNOLOGIES FZE LLC</span>. All rights reserved.
+                </span>
+                <div class="footer-legal-links d-flex flex-wrap gap-3 small">
+                    <a href="./privacy-policy" class="text-secondary text-decoration-none hover-white transition">Privacy Policy</a>
+                    <span class="text-secondary">|</span>
+                    <a href="./terms" class="text-secondary text-decoration-none hover-white transition">Terms of Service</a>
+                    <span class="text-secondary">|</span>
+                    <a href="./cookie-policy" class="text-secondary text-decoration-none hover-white transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/app.js?v=1790852077"></script>
+    
+    <!-- Cookie Banner -->
+    
+<!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner cookie-banner-bottom cookie-banner-dark" role="dialog" aria-label="Cookie Consent">
+    <div class="cookie-banner-container">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="cookie-banner-text">
+                <h4 class="cookie-banner-title">We Value Your Privacy</h4>
+                <p class="cookie-banner-description">
+                    We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
+                    By clicking "Accept All", you consent to our use of cookies. 
+                    <a href="./cookie-policy" class="cookie-banner-link">Learn More</a>
+                </p>
+            </div>
+        </div>
+        <div class="cookie-banner-actions">
+            <button class="cookie-btn cookie-btn-preferences" onclick="openCookiePreferences()">
+                <i class="fas fa-sliders-h"></i> Preferences
+            </button>
+            <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
+                Decline
+            </button>
+            <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">
+                <i class="fas fa-check"></i> Accept All
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Preferences Modal -->
+<div id="cookie-preferences-modal" class="cookie-modal" style="display: none;">
+    <div class="cookie-modal-overlay" onclick="closeCookiePreferences()"></div>
+    <div class="cookie-modal-container">
+        <div class="cookie-modal-header">
+            <h3 class="cookie-modal-title">
+                <i class="fas fa-cookie-bite"></i> Cookie Preferences
+            </h3>
+            <button class="cookie-modal-close" onclick="closeCookiePreferences()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cookie-modal-body">
+            <p class="cookie-modal-description">
+                Manage your cookie preferences below. You can enable or disable different types of cookies.
+            </p>
+                        <div class="cookie-preference-item">
+                <div class="cookie-preference-info">
+                    <div class="cookie-preference-header">
+                        <h5 class="cookie-preference-name">Necessary</h5>
+                                                <span class="cookie-preference-required">Required</span>
+                                            </div>
+                    <p class="cookie-preference-description">These cookies are essential for the website to function properly.</p>
+                </div>
+                <div class="cookie-preference-toggle">
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookie_necessary" 
+                               checked disabled 
+                               >
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+            </div>
+                        <div class="cookie-preference-item">
+                <div class="cookie-preference-info">
+                    <div class="cookie-preference-header">
+                        <h5 class="cookie-preference-name">Functional</h5>
+                                            </div>
+                    <p class="cookie-preference-description">These cookies enable enhanced functionality and personalization.</p>
+                </div>
+                <div class="cookie-preference-toggle">
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookie_functional" 
+                                
+                               checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+            </div>
+                        <div class="cookie-preference-item">
+                <div class="cookie-preference-info">
+                    <div class="cookie-preference-header">
+                        <h5 class="cookie-preference-name">Analytics</h5>
+                                            </div>
+                    <p class="cookie-preference-description">These cookies help us understand how visitors interact with our website.</p>
+                </div>
+                <div class="cookie-preference-toggle">
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookie_analytics" 
+                                
+                               checked>
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+            </div>
+                        <div class="cookie-preference-item">
+                <div class="cookie-preference-info">
+                    <div class="cookie-preference-header">
+                        <h5 class="cookie-preference-name">Marketing</h5>
+                                            </div>
+                    <p class="cookie-preference-description">These cookies are used to deliver relevant advertising and marketing communications.</p>
+                </div>
+                <div class="cookie-preference-toggle">
+                    <label class="cookie-switch">
+                        <input type="checkbox" id="cookie_marketing" 
+                                
+                               >
+                        <span class="cookie-slider"></span>
+                    </label>
+                </div>
+            </div>
+                    </div>
+        <div class="cookie-modal-footer">
+            <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Decline All</button>
+            <button class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">
+                <i class="fas fa-check"></i> Save Preferences
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Banner CSS -->
+<style>
+/* ============================================================
+   COOKIE BANNER - Fully Responsive
+   ============================================================ */
+#cookie-banner {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    background: rgba(7, 17, 31, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-glass, rgba(255,255,255,0.08));
+    padding: 16px 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#cookie-banner.cookie-banner-hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Position: Bottom */
+#cookie-banner.cookie-banner-bottom {
+    bottom: 0;
+    transform: translateY(0);
+}
+
+#cookie-banner.cookie-banner-bottom.cookie-banner-hidden {
+    transform: translateY(100%);
+}
+
+/* Position: Top */
+#cookie-banner.cookie-banner-top {
+    top: 0;
+    border-top: none;
+    border-bottom: 1px solid var(--border-glass, rgba(255,255,255,0.08));
+    transform: translateY(0);
+}
+
+#cookie-banner.cookie-banner-top.cookie-banner-hidden {
+    transform: translateY(-100%);
+}
+
+/* Theme: Dark */
+#cookie-banner.cookie-banner-dark {
+    background: rgba(7, 17, 31, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-color: var(--border-glass, rgba(255,255,255,0.08));
+}
+
+#cookie-banner.cookie-banner-dark .cookie-banner-title {
+    color: #FFFFFF;
+}
+
+#cookie-banner.cookie-banner-dark .cookie-banner-description {
+    color: #94A3B8;
+}
+
+#cookie-banner.cookie-banner-dark .cookie-banner-link {
+    color: #2563EB;
+}
+
+/* Theme: Light */
+#cookie-banner.cookie-banner-light {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+#cookie-banner.cookie-banner-light .cookie-banner-title {
+    color: #07111F;
+}
+
+#cookie-banner.cookie-banner-light .cookie-banner-description {
+    color: #475569;
+}
+
+#cookie-banner.cookie-banner-light .cookie-banner-link {
+    color: #2563EB;
+}
+
+/* Banner Container */
+.cookie-banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Banner Content */
+.cookie-banner-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1;
+}
+
+.cookie-banner-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 50%;
+    color: #2563EB;
+    font-size: 20px;
+}
+
+.cookie-banner-text {
+    flex: 1;
+}
+
+.cookie-banner-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+
+.cookie-banner-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cookie-banner-link {
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.cookie-banner-link:hover {
+    color: var(--accent, #00D4FF);
+}
+
+/* Banner Actions */
+.cookie-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* Cookie Buttons */
+.cookie-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    white-space: nowrap;
+}
+
+.cookie-btn-accept {
+    background: linear-gradient(135deg, #2563EB, #06B6D4);
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.cookie-btn-accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.cookie-btn-decline {
+    background: transparent;
+    color: #94A3B8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cookie-btn-decline:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+}
+
+.cookie-btn-preferences {
+    background: transparent;
+    color: #94A3B8;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cookie-btn-preferences:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+}
+
+/* Light theme button variants */
+.cookie-banner-light .cookie-btn-decline {
+    color: #475569;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.cookie-banner-light .cookie-btn-decline:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #07111F;
+}
+
+.cookie-banner-light .cookie-btn-preferences {
+    color: #475569;
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.cookie-banner-light .cookie-btn-preferences:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #07111F;
+}
+
+/* ============================================================
+   COOKIE PREFERENCES MODAL
+   ============================================================ */
+.cookie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: cookieModalFadeIn 0.3s ease;
+}
+
+.cookie-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.cookie-modal-container {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-secondary, #0F172A);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-glass, rgba(255,255,255,0.08));
+    animation: cookieModalSlideUp 0.3s ease;
+}
+
+.cookie-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-glass, rgba(255,255,255,0.08));
+}
+
+.cookie-modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.cookie-modal-title i {
+    color: #2563EB;
+    margin-right: 10px;
+}
+
+.cookie-modal-close {
+    background: none;
+    border: none;
+    color: #94A3B8;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.cookie-modal-close:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+}
+
+.cookie-modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
+.cookie-modal-description {
+    font-size: 14px;
+    color: #94A3B8;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.cookie-preference-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-glass, rgba(255,255,255,0.05));
+}
+
+.cookie-preference-item:last-child {
+    border-bottom: none;
+}
+
+.cookie-preference-info {
+    flex: 1;
+    padding-right: 16px;
+}
+
+.cookie-preference-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.cookie-preference-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.cookie-preference-required {
+    font-size: 11px;
+    font-weight: 600;
+    color: #2563EB;
+    background: rgba(37, 99, 235, 0.1);
+    padding: 2px 10px;
+    border-radius: 50px;
+}
+
+.cookie-preference-description {
+    font-size: 13px;
+    color: #94A3B8;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Toggle Switch */
+.cookie-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.cookie-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cookie-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #334155;
+    transition: 0.3s ease;
+    border-radius: 50px;
+}
+
+.cookie-slider:before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: #FFFFFF;
+    transition: 0.3s ease;
+    border-radius: 50%;
+}
+
+.cookie-switch input:checked + .cookie-slider {
+    background: linear-gradient(135deg, #2563EB, #06B6D4);
+}
+
+.cookie-switch input:checked + .cookie-slider:before {
+    transform: translateX(22px);
+}
+
+.cookie-switch input:disabled + .cookie-slider {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cookie-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border-glass, rgba(255,255,255,0.08));
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes cookieModalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes cookieModalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ============================================================
+   RESPONSIVE COOKIE BANNER
+   ============================================================ */
+
+/* Tablet and smaller */
+@media (max-width: 992px) {
+    .cookie-banner-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    
+    .cookie-banner-content {
+        align-items: flex-start;
+    }
+    
+    .cookie-banner-actions {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #cookie-banner {
+        padding: 12px 0;
+    }
+    
+    .cookie-banner-container {
+        padding: 0 16px;
+        gap: 10px;
+    }
+    
+    .cookie-banner-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    
+    .cookie-banner-title {
+        font-size: 14px;
+    }
+    
+    .cookie-banner-description {
+        font-size: 13px;
+    }
+    
+    .cookie-banner-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .cookie-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+        flex: 1;
+        min-width: 80px;
+        text-align: center;
+    }
+    
+    /* Modal */
+    .cookie-modal-container {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .cookie-modal-header {
+        padding: 16px 20px;
+    }
+    
+    .cookie-modal-title {
+        font-size: 16px;
+    }
+    
+    .cookie-modal-body {
+        padding: 16px 20px;
+        max-height: 50vh;
+    }
+    
+    .cookie-preference-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px 0;
+    }
+    
+    .cookie-preference-info {
+        padding-right: 0;
+        width: 100%;
+    }
+    
+    .cookie-modal-footer {
+        flex-direction: column-reverse;
+        padding: 12px 20px;
+        gap: 8px;
+    }
+    
+    .cookie-modal-footer .cookie-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    #cookie-banner {
+        padding: 10px 0;
+    }
+    
+    .cookie-banner-container {
+        padding: 0 12px;
+        gap: 8px;
+    }
+    
+    .cookie-banner-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .cookie-banner-title {
+        font-size: 13px;
+    }
+    
+    .cookie-banner-description {
+        font-size: 12px;
+    }
+    
+    .cookie-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 60px;
+    }
+    
+    .cookie-modal-title {
+        font-size: 14px;
+    }
+    
+    .cookie-preference-name {
+        font-size: 13px;
+    }
+    
+    .cookie-preference-description {
+        font-size: 12px;
+    }
+    
+    .cookie-switch {
+        width: 40px;
+        height: 22px;
+    }
+    
+    .cookie-slider:before {
+        height: 16px;
+        width: 16px;
+        left: 3px;
+        bottom: 3px;
+    }
+    
+    .cookie-switch input:checked + .cookie-slider:before {
+        transform: translateX(18px);
+    }
+}
+
+/* ============================================================
+   COOKIE BANNER UTILITY CLASSES
+   ============================================================ */
+.cookie-banner-hidden {
+    display: none !important;
+}
+</style>
+
+<!-- Cookie Banner JavaScript -->
+<script>
+(function() {
+    'use strict';
+
+    // Get cookie banner elements
+    const banner = document.getElementById('cookie-banner');
+    const modal = document.getElementById('cookie-preferences-modal');
+    const cookieName = 'starleaf_cookie_consent';
+
+    // Cookie functions
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = 'expires=' + date.toUTCString();
+        document.cookie = name + '=' + JSON.stringify(value) + ';' + expires + ';path=/;SameSite=Lax';
+    }
+
+    function getCookie(name) {
+        const cookieName = name + '=';
+        const cookies = document.cookie.split(';');
+        for(let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.indexOf(cookieName) === 0) {
+                try {
+                    return JSON.parse(cookie.substring(cookieName.length, cookie.length));
+                } catch(e) {
+                    return cookie.substring(cookieName.length, cookie.length);
+                }
+            }
+        }
+        return null;
+    }
+
+    function deleteCookie(name) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    }
+
+    // Get current consent
+    function getConsent() {
+        const consent = getCookie(cookieName);
+        if (consent) {
+            return consent;
+        }
+        return null;
+    }
+
+    // Save consent
+    function saveConsent(preferences) {
+        const consentData = {
+            accepted: true,
+            preferences: preferences,
+            timestamp: new Date().toISOString()
+        };
+        setCookie(cookieName, consentData, 365);
+        hideBanner();
+        
+        // Dispatch event for analytics
+        const event = new CustomEvent('cookieConsentUpdated', { detail: consentData });
+        document.dispatchEvent(event);
+        
+        // Reload to apply changes if needed
+        if (window.location.search.includes('show_cookie_banner')) {
+            window.location.href = window.location.pathname;
+        }
+    }
+
+    // Hide banner
+    function hideBanner() {
+        if (banner) {
+            banner.classList.add('cookie-banner-hidden');
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 400);
+        }
+    }
+
+    // Show banner (for debugging)
+    function showBanner() {
+        if (banner) {
+            banner.style.display = 'block';
+            setTimeout(() => {
+                banner.classList.remove('cookie-banner-hidden');
+            }, 10);
+        }
+    }
+
+    // Get preferences from form
+    function getPreferencesFromForm() {
+        const preferences = {};
+                const checkbox_necessary = document.getElementById('cookie_necessary');
+        if (checkbox_necessary) {
+            preferences['necessary'] = checkbox_necessary.checked;
+        }
+                const checkbox_functional = document.getElementById('cookie_functional');
+        if (checkbox_functional) {
+            preferences['functional'] = checkbox_functional.checked;
+        }
+                const checkbox_analytics = document.getElementById('cookie_analytics');
+        if (checkbox_analytics) {
+            preferences['analytics'] = checkbox_analytics.checked;
+        }
+                const checkbox_marketing = document.getElementById('cookie_marketing');
+        if (checkbox_marketing) {
+            preferences['marketing'] = checkbox_marketing.checked;
+        }
+                return preferences;
+    }
+
+    // Set preferences in form
+    function setPreferencesInForm(preferences) {
+                const checkbox_necessary = document.getElementById('cookie_necessary');
+        if (checkbox_necessary && preferences) {
+            checkbox_necessary.checked = preferences['necessary'] !== undefined ? preferences['necessary'] : true;
+        }
+                const checkbox_functional = document.getElementById('cookie_functional');
+        if (checkbox_functional && preferences) {
+            checkbox_functional.checked = preferences['functional'] !== undefined ? preferences['functional'] : true;
+        }
+                const checkbox_analytics = document.getElementById('cookie_analytics');
+        if (checkbox_analytics && preferences) {
+            checkbox_analytics.checked = preferences['analytics'] !== undefined ? preferences['analytics'] : true;
+        }
+                const checkbox_marketing = document.getElementById('cookie_marketing');
+        if (checkbox_marketing && preferences) {
+            checkbox_marketing.checked = preferences['marketing'] !== undefined ? preferences['marketing'] : false;
+        }
+            }
+
+    // Accept all cookies
+    window.acceptAllCookies = function() {
+        const preferences = {};
+                preferences['necessary'] = true;
+                preferences['functional'] = true;
+                preferences['analytics'] = true;
+                preferences['marketing'] = true;
+                saveConsent(preferences);
+    };
+
+    // Decline cookies
+    window.declineCookies = function() {
+        const preferences = {};
+                preferences['necessary'] = true;
+                preferences['functional'] = false;
+                preferences['analytics'] = false;
+                preferences['marketing'] = false;
+                saveConsent(preferences);
+        closeCookiePreferences();
+    };
+
+    // Save preferences
+    window.saveCookiePreferences = function() {
+        const preferences = getPreferencesFromForm();
+        saveConsent(preferences);
+        closeCookiePreferences();
+    };
+
+    // Open preferences modal
+    window.openCookiePreferences = function() {
+        if (modal) {
+            // Load current preferences
+            const consent = getConsent();
+            if (consent && consent.preferences) {
+                setPreferencesInForm(consent.preferences);
+            } else {
+                // Set defaults
+                                const checkbox_necessary = document.getElementById('cookie_necessary');
+                if (checkbox_necessary) {
+                    checkbox_necessary.checked = true;
+                }
+                                const checkbox_functional = document.getElementById('cookie_functional');
+                if (checkbox_functional) {
+                    checkbox_functional.checked = true;
+                }
+                                const checkbox_analytics = document.getElementById('cookie_analytics');
+                if (checkbox_analytics) {
+                    checkbox_analytics.checked = true;
+                }
+                                const checkbox_marketing = document.getElementById('cookie_marketing');
+                if (checkbox_marketing) {
+                    checkbox_marketing.checked = false;
+                }
+                            }
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    // Close preferences modal
+    window.closeCookiePreferences = function() {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
+            closeCookiePreferences();
+        }
+    });
+
+    // Check consent on load
+    document.addEventListener('DOMContentLoaded', function() {
+        const consent = getConsent();
+        if (consent) {
+            hideBanner();
+        }
+    });
+
+    // Expose functions for debugging
+    window.cookieBanner = {
+        showBanner: showBanner,
+        hideBanner: hideBanner,
+        getConsent: getConsent,
+        deleteConsent: function() { deleteCookie(cookieName); showBanner(); }
+    };
+
+})();
+</script>
+</body>
+</html>

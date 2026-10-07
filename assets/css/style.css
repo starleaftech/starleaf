@@ -1150,6 +1150,138 @@ body.page-contact::before {
 }
 
 /* ============================================================
+   PRODUCTION V3 — HERO VISIBILITY / MOBILE FAIL-SAFE
+   ------------------------------------------------------------
+   Hero content must remain visible even when optional AOS,
+   Swiper or Lottie CDNs are slow/unavailable. Animations enhance
+   the page; they must never be responsible for displaying it.
+   ============================================================ */
+.hero-section [data-aos],
+.service-hero-lottie [data-aos] {
+    visibility: visible;
+}
+
+/* Safe default for AOS elements until AOS has successfully initialized. */
+.hero-section [data-aos],
+.service-hero-lottie [data-aos] {
+    opacity: 1;
+    transform: none;
+}
+
+/* Dashboard must have a visible first slide before/without Swiper JS. */
+.dashboard-slider .swiper-slide:first-child {
+    opacity: 1;
+}
+.dashboard-slider .swiper-slide:first-child .dashboard-illustration {
+    opacity: 1;
+    transform: none;
+}
+
+/* If the Lottie library/JSON fails, leave a deliberate visual fallback. */
+.hero-lottie-wrapper #lottieAnimation {
+    min-height: 240px;
+    position: relative;
+}
+.hero-lottie-wrapper #lottieAnimation:empty::before {
+    content: "✦";
+    position: absolute;
+    inset: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,99,235,.20), rgba(6,182,212,.06) 55%, transparent 72%);
+    color: rgba(96,165,250,.95);
+    font-size: clamp(54px, 10vw, 96px);
+    line-height: 1;
+    box-shadow: 0 0 70px rgba(37,99,235,.18);
+}
+
+@media (max-width: 992px) {
+    /* Mobile/tablet hero must never be hidden by AOS initialization timing. */
+    .hero-section [data-aos],
+    .service-hero-lottie [data-aos] {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    .hero-section,
+    .service-hero-lottie {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .hero-section > .container,
+    .service-hero-lottie > .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .hero-section .row,
+    .service-hero-lottie .row {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero-section .row > [class*="col-"],
+    .service-hero-lottie .row > [class*="col-"] {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .hero-lottie-wrapper #lottieAnimation {
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section,
+    .service-hero-lottie {
+        min-height: auto;
+        padding-top: 82px;
+        padding-bottom: 28px;
+    }
+
+    .hero-section .display-1,
+    .service-hero-lottie .display-1 {
+        font-size: clamp(28px, 9vw, 34px) !important;
+        line-height: 1.08;
+    }
+
+    .hero-section .lead,
+    .service-hero-lottie .lead {
+        font-size: 15px !important;
+        line-height: 1.6;
+    }
+
+    .hero-lottie-wrapper {
+        width: min(100%, 300px);
+        max-width: 300px;
+        aspect-ratio: 1 / 1;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-lottie-wrapper #lottieAnimation {
+        min-height: 220px;
+    }
+
+    .dashboard-slider-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .dashboard-slider .swiper-slide:first-child,
+    .dashboard-slider .swiper-slide:first-child .dashboard-illustration {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ============================================================
    PRODUCTION V2 — RESPONSIVE / LAYOUT HARDENING
    ============================================================ */
 html, body { width: 100%; max-width: 100%; }

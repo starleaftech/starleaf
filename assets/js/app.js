@@ -59,8 +59,18 @@
                 easing: 'ease-out-cubic',
                 once: true,
                 offset: isMobile() ? 30 : 60,
-                disable: false
+                disable: isMobile()
             });
+        }
+
+        // Hero visibility is never allowed to depend on AOS.
+        if (isMobile()) {
+            document.querySelectorAll('.hero-section [data-aos], .service-hero-lottie [data-aos]')
+                .forEach(function(el) {
+                    el.style.opacity = '1';
+                    el.style.visibility = 'visible';
+                    el.style.transform = 'none';
+                });
         }
 
         /* ============================================================
@@ -342,6 +352,10 @@
                     sliderWrapper.addEventListener('mouseleave', function() { dashboardSwiper.autoplay.start(); });
                 }
             }
+        } else {
+            // Swiper is optional. Keep the first hero slide visible if its CDN is unavailable.
+            document.querySelectorAll('.dashboard-slider .swiper-slide:first-child, .dashboard-slider .swiper-slide:first-child .dashboard-illustration')
+                .forEach(function(el) { el.style.opacity = '1'; el.style.transform = 'none'; });
         }
 
         /* ============================================================
@@ -486,8 +500,8 @@
     // so the relative path back to /assets/ differs.
     function getLottieBasePath() {
         return window.location.pathname.indexOf('/services/') !== -1
-            ? '../../assets/lottie/'
-            : './assets/lottie/';
+            ? '/assets/lottie/'
+            : '/assets/lottie/';
     }
 
     // Build an ordered list of candidate URLs to try for this container:
@@ -582,6 +596,7 @@
                 })
                 .catch(function (err) {
                     console.error('Lottie: unable to load any animation for this page', err);
+                    container.setAttribute('data-lottie-failed', 'true');
                 });
         });
     }

@@ -23,5 +23,72 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.php",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/allservices.php",
+      "destination": "/allservices",
+      "permanent": true
+    },
+    {
+      "source": "/blog.php",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/careers.php",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/contact.php",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/industries.php",
+      "destination": "/industries",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.php",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/technologies.php",
+      "destination": "/technologies",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy.php",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms.php",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/cookie-policy.php",
+      "destination": "/cookie-policy",
+      "permanent": true
+    }
   ]
 }

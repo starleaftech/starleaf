@@ -1,47 +1,45 @@
-# STARLEAF Technologies — Vercel-ready deployment
+# STARLEAF Technologies — Vercel Production V2
 
-This package converts the original PHP/Apache website into a Vercel-friendly deployment:
+Vercel-ready static website + Node.js serverless contact API.
 
-- Static HTML pages generated from the original PHP templates
-- Existing CSS, JavaScript, images and Lottie assets preserved
-- Clean URLs such as `/about`, `/services/ai-development`, `/contact`
-- Vercel serverless contact endpoint at `/api/contact`
-- SMTP credentials moved to Vercel Environment Variables
-- No PHP runtime or `.htaccess` required
+## V2 fixes
 
-## Deploy
+- Mobile-first hero layout: dashboard no longer forces the page horizontally off-screen.
+- Responsive dashboard cards constrained to their column.
+- Back-to-top button rebuilt with a consistent fixed position, safe-area support and reliable pointer state.
+- Equal-height cards across service, portfolio, blog and statistics grids.
+- All internal routes normalized to clean absolute URLs.
+- Removed remaining `.php` navigation links.
+- Added legacy redirects for `/home` and old `.php` URLs.
+- Fixed nested-page asset paths by using `/assets/...`.
+- Fixed service-page Lottie asset resolution.
+- Fixed service-page canonical URLs.
+- Homepage counters render their final values before JavaScript enhancement.
+- Added `sitemap.xml` and updated `robots.txt`.
+- Added a generated favicon.
+- Added security headers in `vercel.json`.
+- Contact form uses `/api/contact` with SMTP environment variables.
 
-1. Upload/push this folder to GitHub.
-2. Import the repository into Vercel.
-3. Framework preset: **Other**
-4. Root Directory: leave as repository root.
-5. Build Command: **leave empty**
-6. Output Directory: **leave empty**
-7. Deploy.
+## Vercel deployment
 
-## Required Vercel Environment Variables
+Framework preset: **Other**
 
-Set these in Vercel → Project → Settings → Environment Variables:
+Build command: **empty**
 
-- `SMTP_HOST` — SMTP server hostname
-- `SMTP_PORT` — usually `587` for STARTTLS or `465` for SSL
-- `SMTP_USER` — SMTP username
-- `SMTP_PASS` — SMTP password/app password/API credential
-- `SMTP_FROM` — verified sender address
-- `CONTACT_TO` — address that receives website enquiries
-- `SMTP_SECURE` — `ssl` for port 465; leave empty for STARTTLS/587
+Output directory: **empty**
 
-Do NOT put real SMTP passwords into source files.
+Deploy the repository root.
 
-## Local test
+### Required environment variables
 
-```bash
-npm install
-npx vercel dev
-```
+`SMTP_HOST`
+`SMTP_PORT`
+`SMTP_USER`
+`SMTP_PASS`
+`SMTP_FROM`
+`CONTACT_TO`
+`SMTP_SECURE`
 
-Then open `/contact` and submit the form.
+For port 587, leave `SMTP_SECURE` empty. For port 465 SSL, set `SMTP_SECURE=ssl`.
 
-## Important
-
-The original PHP source, `.htaccess`, and PHPMailer are intentionally not required by the Vercel deployment package. The site is pre-rendered to static HTML and the contact form uses a Node.js serverless function.
+Never commit SMTP credentials.

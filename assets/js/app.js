@@ -68,13 +68,10 @@
            ============================================================ */
         const backToTop = document.getElementById('back-to-top');
         if (backToTop) {
-            const toggleBackToTop = debounce(() => {
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('show');
-                } else {
-                    backToTop.classList.remove('show');
-                }
-            }, 100);
+            const toggleBackToTop = () => {
+                backToTop.classList.toggle('show', window.scrollY > 320);
+            };
+            toggleBackToTop();
             window.addEventListener('scroll', toggleBackToTop, { passive: true });
             backToTop.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -489,7 +486,7 @@
     // so the relative path back to /assets/ differs.
     function getLottieBasePath() {
         return window.location.pathname.indexOf('/services/') !== -1
-            ? '../assets/lottie/'
+            ? '../../assets/lottie/'
             : './assets/lottie/';
     }
 

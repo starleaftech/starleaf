@@ -1148,3 +1148,170 @@ body.page-contact::before {
 @media (prefers-reduced-motion: reduce) {
     body::before, body::after { animation: none !important; }
 }
+
+/* ============================================================
+   PRODUCTION V2 — RESPONSIVE / LAYOUT HARDENING
+   ============================================================ */
+html, body { width: 100%; max-width: 100%; }
+body { overflow-x: clip; }
+
+/* Never let Bootstrap rows or flex children create horizontal overflow. */
+.container, .container-fluid,
+.row, [class*="col-"],
+.d-flex, .swiper, .swiper-wrapper, .swiper-slide { min-width: 0; }
+.row { --bs-gutter-y: 1.5rem; }
+
+/* Equal-height cards inside the same responsive grid. */
+.row.equal-height-cards > [class*="col-"] { display: flex; }
+.row.equal-height-cards > [class*="col-"] > * { width: 100%; height: 100%; }
+.row > [class*="col-"] > .service-card,
+.row > [class*="col-"] > .portfolio-card,
+.row > [class*="col-"] > .blog-card,
+.row > [class*="col-"] > .industry-card,
+.row > [class*="col-"] > .glass-card { height: 100%; }
+
+/* Cards remain internally consistent even when copy lengths differ. */
+.service-card, .portfolio-card, .blog-card, .industry-card {
+    display: flex;
+    flex-direction: column;
+}
+.service-card .card-body, .portfolio-card .card-body, .blog-card .card-body, .industry-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+.service-card .card-body > :last-child,
+.portfolio-card .card-body > :last-child,
+.blog-card .card-body > :last-child,
+.industry-card .card-body > :last-child { margin-top: auto; }
+
+/* Homepage hero: contain every animated element inside its column. */
+.hero-section .container,
+.hero-section .row { width: 100%; max-width: 100%; }
+.hero-section [class*="col-"] { min-width: 0; }
+.dashboard-slider-wrapper { width: 100%; max-width: 100%; min-width: 0; }
+.dashboard-slider { width: 100%; max-width: 100%; min-width: 0; overflow: hidden; }
+.dashboard-slider .swiper-wrapper { align-items: stretch; }
+.dashboard-slider .swiper-slide { width: 100%; max-width: 100%; min-width: 0; }
+.dashboard-illustration { width: 100%; max-width: 100%; min-width: 0; }
+.dashboard-illustration .glass-card { width: 100%; max-width: 100%; min-width: 0; overflow: hidden; }
+.floating-card, .floating-card-delayed { max-width: 100%; }
+
+/* Decorative glows must never participate in layout width. */
+.floating-glow { max-width: 60vw; max-height: 60vw; }
+
+/* Back-to-top: one consistent implementation at every viewport. */
+#back-to-top {
+    position: fixed !important;
+    right: max(16px, env(safe-area-inset-right)) !important;
+    bottom: max(16px, env(safe-area-inset-bottom)) !important;
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 1 !important;
+    border-radius: 50% !important;
+    z-index: 2000 !important;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity .25s ease, visibility .25s ease, transform .25s ease, box-shadow .25s ease;
+    isolation: isolate;
+}
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+#back-to-top i { display: block; line-height: 1; margin: 0 !important; }
+#back-to-top:focus-visible { outline: 3px solid rgba(0,212,255,.65); outline-offset: 3px; }
+
+/* Service heroes/Lottie: never let the animation force the text column off-screen. */
+.service-hero-lottie, .hero-lottie-wrapper, .hero-lottie-wrapper #lottieAnimation,
+.hero-lottie-wrapper svg, .service-hero-lottie canvas { max-width: 100%; }
+.hero-lottie-wrapper { overflow: hidden; }
+
+@media (max-width: 992px) {
+    .hero-section { min-height: auto; padding: 104px 0 48px; }
+    .hero-section > .container > .row { align-items: center; }
+    .hero-section .col-lg-7, .hero-section .col-lg-5, .hero-section .col-xl-6 { width: 100%; }
+    .hero-section .dashboard-slider-wrapper { margin-top: 24px; }
+    .dashboard-slider .glass-card { padding: 20px !important; }
+}
+
+@media (max-width: 768px) {
+    .container, .container-fluid { --bs-gutter-x: 1.5rem; }
+    .hero-section { padding: 94px 0 36px; }
+    .hero-section .display-1 { max-width: 100%; font-size: clamp(30px, 8vw, 38px); overflow-wrap: anywhere; }
+    .hero-section .lead { max-width: 100%; }
+    .hero-section .d-flex.flex-wrap.gap-4 { width: 100%; }
+    .hero-section .d-flex.flex-wrap.gap-4 > a { flex: 1 1 100%; min-width: 0; text-align: center; }
+    .dashboard-slider-wrapper { margin-top: 18px !important; }
+    .dashboard-slider .glass-card { padding: 16px !important; border-radius: 16px !important; }
+    .dashboard-slider .glass-card .row.g-2 { margin-left: -4px; margin-right: -4px; }
+    .dashboard-slider .glass-card .row.g-2 > [class*="col-"] { padding-left: 4px; padding-right: 4px; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 { gap: 8px; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 > div:nth-child(2) { min-width: 0; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 h5 { white-space: normal; overflow-wrap: anywhere; }
+    .dashboard-slider .glass-card .badge { flex: 0 0 auto; }
+    .dashboard-slider .chart-placeholder { min-width: 0; }
+    .floating-glow { width: 180px; height: 180px; }
+
+    /* Uniform mobile cards: same visual height within each row without forcing huge cards. */
+    .row.equal-height-cards > [class*="col-"] { display: flex; }
+    .row.equal-height-cards > [class*="col-"] > * { width: 100%; }
+
+    #back-to-top { width: 46px !important; height: 46px !important; min-width: 46px; min-height: 46px; }
+}
+
+@media (max-width: 576px) {
+    .container, .container-fluid { --bs-gutter-x: 1rem; }
+    .hero-section { padding: 88px 0 30px; }
+    .hero-section .display-1 { font-size: clamp(28px, 9vw, 34px); line-height: 1.08; }
+    .hero-section .dashboard-slider-wrapper { margin-top: 14px !important; }
+    .dashboard-slider .glass-card { padding: 13px !important; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 { margin-bottom: 14px !important; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 > div:first-child { padding: 9px !important; margin-right: 8px !important; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 i { font-size: 1.15rem !important; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 h5 { font-size: .88rem !important; }
+    .dashboard-slider .glass-card .d-flex.align-items-center.mb-4 .badge { padding: 6px 8px !important; font-size: 10px; }
+    .dashboard-slider .row.g-2 .small { font-size: 10px !important; }
+    .dashboard-slider .row.g-2 .fw-bold { font-size: 12px !important; }
+    .dashboard-slider-controls { margin-top: 12px; }
+    #back-to-top { width: 44px !important; height: 44px !important; min-width: 44px; min-height: 44px; right: max(12px, env(safe-area-inset-right)) !important; bottom: max(12px, env(safe-area-inset-bottom)) !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #back-to-top { transition: opacity .15s ease, visibility .15s ease; transform: none; }
+}
+
+/* Section-level equal-height grids: each card fills its row at desktop/tablet and
+   remains naturally full-width on mobile. */
+.row.g-4 > [class*="col-"]:has(> .service-card),
+.row.g-4 > [class*="col-"]:has(> .portfolio-card),
+.row.g-4 > [class*="col-"]:has(> .blog-card),
+.row.g-4 > [class*="col-"]:has(> .glass-card) {
+    display: flex;
+}
+.row.g-4 > [class*="col-"]:has(> .service-card) > .service-card,
+.row.g-4 > [class*="col-"]:has(> .portfolio-card) > .portfolio-card,
+.row.g-4 > [class*="col-"]:has(> .blog-card) > .blog-card,
+.row.g-4 > [class*="col-"]:has(> .glass-card) > .glass-card {
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 576px) {
+    .row.g-4 > [class*="col-"]:has(> .service-card),
+    .row.g-4 > [class*="col-"]:has(> .portfolio-card),
+    .row.g-4 > [class*="col-"]:has(> .blog-card),
+    .row.g-4 > [class*="col-"]:has(> .glass-card) {
+        display: flex;
+    }
+}

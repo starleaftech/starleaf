@@ -43,3 +43,10 @@ Deploy the repository root.
 For port 587, leave `SMTP_SECURE` empty. For port 465 SSL, set `SMTP_SECURE=ssl`.
 
 Never commit SMTP credentials.
+
+
+## V4 mobile navigation fix
+
+The mobile offcanvas navigation is explicitly fixed to the viewport and removed
+from normal document flow. This prevents the closed menu from pushing the hero
+and page content off-screen on phones.

@@ -1589,3 +1589,157 @@ body { overflow-x: clip; }
         margin-right: 0 !important;
     }
 }
+
+
+/* ============================================================
+   V5 MOBILE NAVIGATION — BOOTSTRAP-OFFCANVAS INDEPENDENT
+   On phones/tablets the menu is a true fixed drawer. It never
+   participates in document flow and cannot push the hero/page.
+   ============================================================ */
+@media (max-width: 991.98px) {
+    html.mobile-nav-active,
+    body.mobile-nav-active {
+        overflow: hidden !important;
+    }
+
+    #navbarMain.offcanvas.offcanvas-lg {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: auto !important;
+        inset: 0 0 0 auto !important;
+        width: min(340px, 86vw) !important;
+        max-width: 86vw !important;
+        height: 100dvh !important;
+        min-height: 100dvh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        background: var(--bg-secondary, #07111f) !important;
+        border-left: 1px solid var(--border-glass, rgba(255,255,255,.12)) !important;
+        box-shadow: -20px 0 60px rgba(0,0,0,.28) !important;
+        overflow: hidden !important;
+        z-index: 2001 !important;
+        transform: translate3d(110%,0,0) !important;
+        visibility: hidden !important;
+        opacity: 1 !important;
+        transition: transform .28s ease, visibility 0s linear .28s !important;
+    }
+
+    #navbarMain.offcanvas.offcanvas-lg.is-mobile-open {
+        transform: translate3d(0,0,0) !important;
+        visibility: visible !important;
+        transition: transform .28s ease, visibility 0s linear 0s !important;
+    }
+
+    #navbarMain .offcanvas-header {
+        flex: 0 0 auto !important;
+        min-height: 72px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 12px 18px !important;
+        border-bottom: 1px solid var(--border-glass, rgba(255,255,255,.12)) !important;
+    }
+
+    #navbarMain .offcanvas-header .navbar-brand img {
+        max-width: 190px !important;
+        width: auto !important;
+        height: 42px !important;
+        object-fit: contain !important;
+    }
+
+    #navbarMain .offcanvas-body {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        display: block !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        padding: 18px 16px 28px !important;
+    }
+
+    #navbarMain .navbar-nav {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 3px !important;
+    }
+
+    #navbarMain .navbar-nav > .nav-item {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    #navbarMain .navbar-nav > .nav-item > .nav-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 48px !important;
+        padding: 12px 14px !important;
+        margin: 0 !important;
+        border-radius: 10px !important;
+        font-size: 16px !important;
+        line-height: 1.25 !important;
+        white-space: normal !important;
+    }
+
+    #navbarMain .navbar-nav > .nav-item > .nav-link:hover,
+    #navbarMain .navbar-nav > .nav-item > .nav-link.active {
+        background: rgba(20, 115, 230, .08) !important;
+    }
+
+    #navbarMain .dropdown-menu {
+        position: static !important;
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 2px 0 6px !important;
+        padding: 6px !important;
+        transform: none !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+    }
+
+    #navbarMain .dropdown-menu .dropdown-item {
+        width: 100% !important;
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 10px 12px !important;
+        white-space: normal !important;
+        line-height: 1.25 !important;
+    }
+
+    .mobile-nav-backdrop {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        background: rgba(0,0,0,.48) !important;
+        z-index: 2000 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: opacity .2s ease, visibility 0s linear .2s !important;
+    }
+
+    .mobile-nav-backdrop.is-visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transition: opacity .2s ease, visibility 0s linear 0s !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-nav-backdrop { display: none !important; }
+}

@@ -180,29 +180,73 @@
         });
 
         /* ============================================================
-           NAVBAR MOBILE OFFCANVAS
+           V5 MOBILE NAVIGATION — INDEPENDENT DRAWER
+           Do not depend on Bootstrap Offcanvas on mobile. This prevents
+           positioning conflicts that can push the page/hero sideways.
            ============================================================ */
-        const navbarCollapse = document.querySelector('#navbarMain');
-        if (navbarCollapse) {
-            // Exclude the Services dropdown-toggle: it must only open/close its
-            // own submenu (handled by setupMobileDropdown below), not close
-            // the whole mobile menu. Previously this matched the toggle too,
-            // so tapping "Services" opened the submenu and immediately closed
-            // the entire navbar in the same click.
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navbarCollapse.classList.contains('show')) {
-                        const bsOffcanvas = bootstrap.Offcanvas.getInstance(navbarCollapse);
-                        if (bsOffcanvas) {
-                            bsOffcanvas.hide();
-                        } else {
-                            navbarCollapse.classList.remove('show');
-                        }
-                    }
+        const mobileNav = document.querySelector('#navbarMain');
+        const mobileNavToggle = document.querySelector('[data-mobile-nav-toggle="true"]');
+        const mobileNavClose = document.querySelector('[data-mobile-nav-close="true"]');
+
+        let mobileNavBackdrop = document.querySelector('.mobile-nav-backdrop');
+        if (!mobileNavBackdrop) {
+            mobileNavBackdrop = document.createElement('div');
+            mobileNavBackdrop.className = 'mobile-nav-backdrop';
+            mobileNavBackdrop.setAttribute('aria-hidden', 'true');
+            document.body.appendChild(mobileNavBackdrop);
+        }
+
+        function isMobileNavViewport() {
+            return window.innerWidth <= 991.98;
+        }
+
+        function openMobileNav() {
+            if (!mobileNav || !isMobileNavViewport()) return;
+            mobileNav.classList.add('is-mobile-open');
+            mobileNavBackdrop.classList.add('is-visible');
+            document.documentElement.classList.add('mobile-nav-active');
+            document.body.classList.add('mobile-nav-active');
+            if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'true');
+            mobileNav.setAttribute('aria-hidden', 'false');
+        }
+
+        function closeMobileNav() {
+            if (!mobileNav) return;
+            mobileNav.classList.remove('is-mobile-open');
+            mobileNavBackdrop.classList.remove('is-visible');
+            document.documentElement.classList.remove('mobile-nav-active');
+            document.body.classList.remove('mobile-nav-active');
+            if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'false');
+            mobileNav.setAttribute('aria-hidden', 'true');
+        }
+
+        if (mobileNavToggle) {
+            mobileNavToggle.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (mobileNav && mobileNav.classList.contains('is-mobile-open')) closeMobileNav();
+                else openMobileNav();
+            });
+        }
+        if (mobileNavClose) {
+            mobileNavClose.addEventListener('click', function (e) {
+                e.preventDefault();
+                closeMobileNav();
+            });
+        }
+        mobileNavBackdrop.addEventListener('click', closeMobileNav);
+
+        if (mobileNav) {
+            mobileNav.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .navbar-nav .dropdown-item').forEach(link => {
+                link.addEventListener('click', function () {
+                    if (isMobileNavViewport()) closeMobileNav();
                 });
             });
         }
+
+        window.addEventListener('resize', function () {
+            if (!isMobileNavViewport()) closeMobileNav();
+        }, { passive: true });
 
         /* ============================================================
            MOBILE DROPDOWN FIX - Services Dropdown

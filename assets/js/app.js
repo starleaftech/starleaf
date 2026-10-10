@@ -180,15 +180,26 @@
         });
 
         /* ============================================================
-           V5 MOBILE NAVIGATION — INDEPENDENT DRAWER
-           Do not depend on Bootstrap Offcanvas on mobile. This prevents
-           positioning conflicts that can push the page/hero sideways.
+           V6 MOBILE NAVIGATION — PORTALED FIXED DRAWER
+           Move the drawer out of the navbar stacking context on mobile.
+           This prevents the backdrop covering the drawer and keeps it
+           completely out of document flow.
            ============================================================ */
         const mobileNav = document.querySelector('#navbarMain');
         const mobileNavToggle = document.querySelector('[data-mobile-nav-toggle="true"]');
         const mobileNavClose = document.querySelector('[data-mobile-nav-close="true"]');
-
         let mobileNavBackdrop = document.querySelector('.mobile-nav-backdrop');
+        let mobileNavPlaceholder = null;
+        let mobileNavOriginalParent = null;
+        let mobileNavOriginalNext = null;
+
+        if (mobileNav) {
+            mobileNavOriginalParent = mobileNav.parentNode;
+            mobileNavOriginalNext = mobileNav.nextSibling;
+            mobileNavPlaceholder = document.createComment('navbarMain original location');
+            mobileNavOriginalParent.insertBefore(mobileNavPlaceholder, mobileNav);
+        }
+
         if (!mobileNavBackdrop) {
             mobileNavBackdrop = document.createElement('div');
             mobileNavBackdrop.className = 'mobile-nav-backdrop';
@@ -197,15 +208,31 @@
         }
 
         function isMobileNavViewport() {
-            return window.innerWidth <= 991.98;
+            return window.matchMedia('(max-width: 991.98px)').matches;
+        }
+
+        function portalMobileNav() {
+            if (!mobileNav || !mobileNavPlaceholder || !isMobileNavViewport()) return;
+            if (mobileNav.parentNode !== document.body) document.body.appendChild(mobileNav);
+            mobileNav.classList.add('mobile-nav-portal');
+            mobileNav.setAttribute('aria-hidden', 'true');
+        }
+
+        function restoreDesktopNav() {
+            if (!mobileNav || !mobileNavPlaceholder || !mobileNavPlaceholder.parentNode) return;
+            mobileNav.classList.remove('is-mobile-open', 'mobile-nav-portal');
+            mobileNavPlaceholder.parentNode.insertBefore(mobileNav, mobileNavPlaceholder.nextSibling);
+            mobileNav.setAttribute('aria-hidden', 'false');
         }
 
         function openMobileNav() {
             if (!mobileNav || !isMobileNavViewport()) return;
+            portalMobileNav();
             mobileNav.classList.add('is-mobile-open');
             mobileNavBackdrop.classList.add('is-visible');
             document.documentElement.classList.add('mobile-nav-active');
             document.body.classList.add('mobile-nav-active');
+            mobileNavBackdrop.setAttribute('aria-hidden', 'false');
             if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'true');
             mobileNav.setAttribute('aria-hidden', 'false');
         }
@@ -213,39 +240,62 @@
         function closeMobileNav() {
             if (!mobileNav) return;
             mobileNav.classList.remove('is-mobile-open');
-            mobileNavBackdrop.classList.remove('is-visible');
+            if (mobileNavBackdrop) {
+                mobileNavBackdrop.classList.remove('is-visible');
+                mobileNavBackdrop.setAttribute('aria-hidden', 'true');
+            }
             document.documentElement.classList.remove('mobile-nav-active');
             document.body.classList.remove('mobile-nav-active');
             if (mobileNavToggle) mobileNavToggle.setAttribute('aria-expanded', 'false');
-            mobileNav.setAttribute('aria-hidden', 'true');
+            mobileNav.setAttribute('aria-hidden', isMobileNavViewport() ? 'true' : 'false');
         }
+
+        // Establish the portal before the first interaction.
+        if (isMobileNavViewport()) portalMobileNav();
 
         if (mobileNavToggle) {
             mobileNavToggle.addEventListener('click', function (e) {
                 e.preventDefault();
-                e.stopPropagation();
+                e.stopImmediatePropagation();
                 if (mobileNav && mobileNav.classList.contains('is-mobile-open')) closeMobileNav();
                 else openMobileNav();
-            });
+            }, true);
         }
         if (mobileNavClose) {
             mobileNavClose.addEventListener('click', function (e) {
                 e.preventDefault();
+                e.stopPropagation();
                 closeMobileNav();
             });
         }
-        mobileNavBackdrop.addEventListener('click', closeMobileNav);
+        if (mobileNavBackdrop) mobileNavBackdrop.addEventListener('click', closeMobileNav);
 
         if (mobileNav) {
-            mobileNav.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle), .navbar-nav .dropdown-item').forEach(link => {
-                link.addEventListener('click', function () {
-                    if (isMobileNavViewport()) closeMobileNav();
+            mobileNav.addEventListener('click', function (e) {
+                const link = e.target.closest('.navbar-nav a:not(.dropdown-toggle), .navbar-nav .dropdown-item');
+                if (link && isMobileNavViewport()) closeMobileNav();
+            });
+            mobileNav.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+                toggle.addEventListener('click', function(e) {
+                    if (!isMobileNavViewport()) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const menu = toggle.nextElementSibling;
+                    if (menu && menu.classList.contains('dropdown-menu')) {
+                        menu.classList.toggle('show');
+                        toggle.setAttribute('aria-expanded', menu.classList.contains('show') ? 'true' : 'false');
+                    }
                 });
             });
         }
 
         window.addEventListener('resize', function () {
-            if (!isMobileNavViewport()) closeMobileNav();
+            if (isMobileNavViewport()) {
+                portalMobileNav();
+            } else {
+                closeMobileNav();
+                restoreDesktopNav();
+            }
         }, { passive: true });
 
         /* ============================================================

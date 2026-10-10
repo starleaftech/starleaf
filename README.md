@@ -50,3 +50,12 @@ Never commit SMTP credentials.
 The mobile offcanvas navigation is explicitly fixed to the viewport and removed
 from normal document flow. This prevents the closed menu from pushing the hero
 and page content off-screen on phones.
+
+
+## V6 responsive/menu fixes
+- Mobile navigation drawer is moved to `document.body` on phone/tablet widths to avoid stacking-context/backdrop conflicts.
+- Drawer open/close is handled by a dedicated script and fixed viewport overlay.
+- Hero top spacing reduced across desktop/tablet/mobile.
+- Footer mail icon and email address are kept on one line where possible.
+- Common Bootstrap/card/grid layouts use equal-height flex cards within each row.
+- After deployment, test menu open/close and the Services dropdown on a real mobile browser.

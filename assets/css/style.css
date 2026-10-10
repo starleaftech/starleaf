@@ -1743,3 +1743,168 @@ body { overflow-x: clip; }
 @media (min-width: 992px) {
     .mobile-nav-backdrop { display: none !important; }
 }
+
+
+/* ============================================================
+   V6 PRODUCTION RESPONSIVE POLISH
+   ============================================================ */
+
+/* Reduce the oversized gap between the header and hero on all pages. */
+@media (min-width: 992px) {
+  .hero-section { padding-top: clamp(34px, 4vw, 64px) !important; }
+  .service-hero-lottie { padding-top: clamp(30px, 3.5vw, 56px) !important; }
+}
+@media (max-width: 991.98px) {
+  .hero-section { padding-top: clamp(24px, 4.5vw, 42px) !important; }
+  .service-hero-lottie { padding-top: clamp(22px, 4vw, 38px) !important; }
+}
+@media (max-width: 576px) {
+  .hero-section { padding-top: 20px !important; }
+  .service-hero-lottie { padding-top: 18px !important; }
+  .hero-section .hero-badge,
+  .hero-section .badge { margin-top: 0 !important; }
+}
+
+/* Mobile drawer is portaled to body, so no navbar stacking context can cover it. */
+@media (max-width: 991.98px) {
+  #navbarMain.mobile-nav-portal {
+    position: fixed !important;
+    inset: 0 0 0 auto !important;
+    width: min(340px, 88vw) !important;
+    max-width: 88vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: var(--bg-secondary, #07111f) !important;
+    color: var(--text-primary, #f7f9fc) !important;
+    z-index: 10001 !important;
+    transform: translate3d(110%,0,0) !important;
+    visibility: hidden !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+    box-shadow: -18px 0 50px rgba(0,0,0,.3) !important;
+    transition: transform .26s ease, visibility 0s linear .26s !important;
+  }
+  #navbarMain.mobile-nav-portal.is-mobile-open {
+    transform: translate3d(0,0,0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transition: transform .26s ease, visibility 0s linear 0s !important;
+  }
+  #navbarMain.mobile-nav-portal .offcanvas-header {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    min-height: 72px !important;
+    padding: 12px 16px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    background: var(--bg-secondary, #07111f) !important;
+  }
+  #navbarMain.mobile-nav-portal .offcanvas-body {
+    display: block !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    width: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 16px !important;
+  }
+  #navbarMain.mobile-nav-portal .navbar-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 4px !important;
+    margin: 0 !important;
+  }
+  #navbarMain.mobile-nav-portal .nav-item,
+  #navbarMain.mobile-nav-portal .nav-link {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+  .mobile-nav-backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 10000 !important;
+    background: rgba(3, 9, 20, .58) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  .mobile-nav-backdrop.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Footer email: keep icon and address on the same line, allow safe wrapping only on very narrow screens. */
+.footer p:has(a[href^="mailto:"]) {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+.footer p:has(a[href^="mailto:"]) > i,
+.footer p:has(a[href^="mailto:"]) > .fa-envelope {
+  flex: 0 0 auto !important;
+  margin: 3px 0 0 !important;
+}
+.footer p:has(a[href^="mailto:"]) a {
+  display: inline-block !important;
+  min-width: 0 !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+@media (max-width: 380px) {
+  .footer p:has(a[href^="mailto:"]) { font-size: 12px !important; }
+}
+
+/* Uniform card sizing across all common card grids, not just service cards. */
+.row.g-3 > [class*="col-"],
+.row.g-4 > [class*="col-"],
+.row.g-5 > [class*="col-"],
+[class*="grid"] > .service-card,
+[class*="grid"] > .portfolio-card,
+[class*="grid"] > .blog-card {
+  min-width: 0;
+}
+.row.g-3 > [class*="col-"]:has(> .card),
+.row.g-4 > [class*="col-"]:has(> .card),
+.row.g-5 > [class*="col-"]:has(> .card),
+.row.g-3 > [class*="col-"]:has(> .glass-card),
+.row.g-4 > [class*="col-"]:has(> .glass-card),
+.row.g-5 > [class*="col-"]:has(> .glass-card) {
+  display: flex;
+  align-items: stretch;
+}
+.row.g-3 > [class*="col-"] > .card,
+.row.g-4 > [class*="col-"] > .card,
+.row.g-5 > [class*="col-"] > .card,
+.row.g-3 > [class*="col-"] > .glass-card,
+.row.g-4 > [class*="col-"] > .glass-card,
+.row.g-5 > [class*="col-"] > .glass-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+.row.g-3 > [class*="col-"] > .card .card-body,
+.row.g-4 > [class*="col-"] > .card .card-body,
+.row.g-5 > [class*="col-"] > .card .card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+.row.g-3 > [class*="col-"] > .card .card-body > .btn:last-child,
+.row.g-4 > [class*="col-"] > .card .card-body > .btn:last-child,
+.row.g-5 > [class*="col-"] > .card .card-body > .btn:last-child {
+  margin-top: auto;
+}
